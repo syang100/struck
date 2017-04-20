@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
 	else
 	{
 		// parse frames file
-		string framesFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+conf.sequenceName+"_frames.txt";
+		string framesFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+"frames.txt";
 		ifstream framesFile(framesFilePath.c_str(), ios::in);
 		if (!framesFile)
 		{
@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
 			return EXIT_FAILURE;
 		}
 		
-		imgFormat = conf.sequenceBasePath+"/"+conf.sequenceName+"/imgs/img%05d.png";
+		imgFormat = conf.sequenceBasePath+"/"+conf.sequenceName+"/img/%04d.jpg";
 		
 		// read first frame to get size
 		char imgPath[256];
@@ -132,7 +132,7 @@ int main(int argc, char* argv[])
 		scaleH = (float)conf.frameHeight/tmp.rows;
 		
 		// read init box from ground truth file
-		string gtFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+conf.sequenceName+"_gt.txt";
+		string gtFilePath = conf.sequenceBasePath+"/"+conf.sequenceName+"/"+"groundtruth_rect.txt";
 		ifstream gtFile(gtFilePath.c_str(), ios::in);
 		if (!gtFile)
 		{
