@@ -32,6 +32,7 @@
 
 #include <vector>
 
+namespace struck {
 class Config;
 
 class MultiFeatures : public Features
@@ -44,5 +45,6 @@ private:
 	
 	virtual void UpdateFeatureVector(const Sample& s);
 };
+} // namespace struck
 
 #endif

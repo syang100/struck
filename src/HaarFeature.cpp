@@ -33,6 +33,7 @@
 
 using namespace std;
 
+namespace struck {
 HaarFeature::HaarFeature(const FloatRect& bb, int type) :
 	m_bb(bb)
 {
@@ -123,3 +124,4 @@ float HaarFeature::Eval(const Sample& s) const
 	}
 	return value / (m_factor*roi.Area()*m_bb.Area());
 }
+} // namespace struck

@@ -36,6 +36,7 @@
 
 #include <opencv/cv.h>
 
+namespace struck {
 class Config;
 class Features;
 class Kernel;
@@ -113,5 +114,6 @@ private:
 	double Evaluate(const Eigen::VectorXd& x, const FloatRect& y) const;
 	void UpdateDebugImage();
 };
+} // namespace struck
 
 #endif

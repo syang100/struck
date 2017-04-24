@@ -35,6 +35,7 @@
 using namespace Eigen;
 using namespace cv;
 
+namespace struck {
 static const int kPatchSize = 16;
 
 RawFeatures::RawFeatures(const Config& conf) :
@@ -60,3 +61,4 @@ void RawFeatures::UpdateFeatureVector(const Sample& s)
 		}
 	}
 }
+} // namespace struck

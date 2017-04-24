@@ -32,6 +32,7 @@
 
 #include <opencv/cv.h>
 
+namespace struck {
 class Config;
 
 class RawFeatures : public Features
@@ -44,5 +45,6 @@ private:
 	
 	virtual void UpdateFeatureVector(const Sample& s);
 };
+} // namespace struck
 
 #endif

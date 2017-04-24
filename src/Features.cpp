@@ -29,6 +29,7 @@
 
 using namespace Eigen;
 
+namespace struck {
 Features::Features() :
 	m_featureCount(0)
 {
@@ -39,3 +40,4 @@ void Features::SetCount(int c)
 	m_featureCount = c;
 	m_featVec = VectorXd::Zero(c);
 }
+} // namespace struck

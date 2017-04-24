@@ -34,6 +34,7 @@
 using namespace std;
 using namespace cv;
 
+namespace struck {
 static const int kNumBins = 16;
 
 ImageRep::ImageRep(const Mat& image, bool computeIntegral, bool computeIntegralHist, bool colour) :
@@ -126,3 +127,4 @@ void ImageRep::Hist(const IntRect& rRect, Eigen::VectorXd& h) const
 		h[i] = (float)sum/norm;
 	}
 }
+} // namespace struck

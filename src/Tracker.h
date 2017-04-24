@@ -34,6 +34,7 @@
 #include <Eigen/Core>
 #include <opencv/cv.h>
 
+namespace struck {
 class Config;
 class Features;
 class Kernel;
@@ -68,5 +69,6 @@ private:
 	void UpdateLearner(const ImageRep& image);
 	void UpdateDebugImage(const std::vector<FloatRect>& samples, const FloatRect& centre, const std::vector<double>& scores);
 };
+} // namespace struck
 
 #endif

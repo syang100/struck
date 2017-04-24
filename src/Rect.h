@@ -31,6 +31,7 @@
 #include <iostream>
 #include <algorithm>
 
+namespace struck {
 template <typename T>
 class Rect
 {
@@ -132,5 +133,6 @@ bool Rect<T>::IsInside(const Rect<T2>& rOther) const
 {
 	return (XMin()>=rOther.XMin()) && (YMin()>=rOther.YMin()) && (XMax()<=rOther.XMax()) && (YMax()<=rOther.YMax());
 }
+} // namespace struck
 
 #endif

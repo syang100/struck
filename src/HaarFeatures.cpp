@@ -28,6 +28,7 @@
 #include "HaarFeatures.h"
 #include "Config.h"
 
+namespace struck {
 static const int kSystematicFeatureCount = 192;
 
 HaarFeatures::HaarFeatures(const Config& conf)
@@ -64,3 +65,4 @@ void HaarFeatures::UpdateFeatureVector(const Sample& s)
 		m_featVec[i] = m_features[i].Eval(s);
 	}
 }
+} // namespace struck

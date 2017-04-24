@@ -35,6 +35,8 @@
 #include "GraphUtils/GraphUtils.h"
 
 #include <opencv/highgui.h>
+
+namespace struck {
 static const int kTileSize = 30;
 using namespace cv;
 
@@ -545,3 +547,4 @@ void LaRank::UpdateDebugImage()
 	setGraphColor(0);
 	drawFloatGraph(vals, n, &II, 0.f, 0.f, I.cols, I.rows);
 }
+} // namespace struck

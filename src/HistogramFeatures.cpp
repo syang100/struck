@@ -36,6 +36,7 @@ using namespace Eigen;
 using namespace cv;
 using namespace std;
 
+namespace struck {
 static const int kNumBins = 16;
 static const int kNumLevels = 4;
 static const int kNumCellsX = 3;
@@ -83,3 +84,4 @@ void HistogramFeatures::UpdateFeatureVector(const Sample& s)
 	}
 	m_featVec /= histind;
 }
+} // namespace struck
