@@ -31,7 +31,7 @@
 #include "Rect.h"
 
 #include <vector>
-#include <Eigen/Core>
+//#include <Eigen/Core>
 #include <opencv/cv.h>
 
 namespace struck {
@@ -54,6 +54,7 @@ public:
 	
 	inline const FloatRect& GetBB() const { return m_bb; }
 	inline bool IsInitialised() const { return m_initialised; }
+  std::vector<double> GetBBFeature() const;
 	
 private:
 	const Config& m_config;

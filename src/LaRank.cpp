@@ -34,7 +34,8 @@
 #include "Rect.h"
 #include "GraphUtils/GraphUtils.h"
 
-#include <opencv/highgui.h>
+//#include <opencv/highgui.h>
+#include <opencv2/opencv.hpp>
 
 namespace struck {
 static const int kTileSize = 30;
@@ -546,5 +547,12 @@ void LaRank::UpdateDebugImage()
 	IplImage II = I;
 	setGraphColor(0);
 	drawFloatGraph(vals, n, &II, 0.f, 0.f, I.cols, I.rows);
+}
+
+std::vector<double> LaRank::GetSPFeature(int i)
+{
+  Eigen::VectorXd& ev = m_sps.back()->x[i];
+  std::vector<double> result(ev.data(), ev.data() + ev.rows() * ev.cols());
+  return result;
 }
 } // namespace struck

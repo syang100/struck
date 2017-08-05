@@ -6,9 +6,7 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release")
 endif()
 
-set(CMAKE_MODULE_PATH ${CMAKE_HOME_DIRECTORY}/cmake ${CMAKE_MODULE_PATH})
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -21,10 +19,14 @@ include_directories(
 
 # add all .cpp and .h files in src
 file(GLOB_RECURSE SRC RELATIVE ${PROJECT_SOURCE_DIR} src/*.cpp)
+file(GLOB_RECURSE MAIN_CPP ${PROJECT_SOURCE_DIR}/src/main.cpp)
+list(REMOVE_ITEM SRC ${MAIN_CPP})
 file(GLOB_RECURSE HEADERS RELATIVE ${PROJECT_SOURCE_DIR} src/*.h)
 
-add_executable(struck ${HEADERS} ${SRC})
+add_library(struck SHARED ${HEADERS} ${SRC})
+add_executable(struck.bin ${MAIN_CPP})
 
-target_link_libraries(struck
+target_link_libraries(struck.bin
+    struck
     ${OpenCV_LIBS}
 )
